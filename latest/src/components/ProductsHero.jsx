@@ -3,8 +3,12 @@ import React from 'react'
 const ProductsHero = () => {
   return (
     <div>
-      <h3 className='text-3xl font-bold bg-red-500 m-4'>Welcome to the Products Page</h3>
-      <h5>Discover our amazing products</h5>
+        <div className='flex justify-center gap-20 bg-amber-100 text-lg py-4'>
+            <div>Home</div>
+            <div>Products</div>
+            <div>Sales</div>
+            <div>Stock</div>
+        </div>
     </div>
   )
 }

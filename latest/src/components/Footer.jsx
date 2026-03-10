@@ -1,12 +1,10 @@
 import React from 'react'
 
-const Footer = ({email}) => {
+const Footer = () => {
   return (
-    <div>
-      footer react
-      <p>this {email}is for the main account</p>
-
-    </div>
+    <footer className='p-4 bg-gray-300 text-center '>
+       2026 @ALL RIGHTS RESERVED
+    </footer>
   )
 }
 

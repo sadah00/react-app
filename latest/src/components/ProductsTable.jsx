@@ -1,27 +1,29 @@
 import React from 'react'
 
-const ProductsTable = () => {
+const ProductsTable = ({ products }) => {
   return (
     <div className="p-4">
-      <table className="table-auto border-collapse border border-gray-400 w-100">
-        <thead className="bg-gray-200">
-          <tr>
-            <th className="border border-gray-400 px-4 py-2">Prod ID</th>
-            <th className="border border-gray-400 px-4 py-2">Name</th>
-            <th className="border border-gray-400 px-4 py-2">Buying</th>
-            <th className="border border-gray-400 px-4 py-2">Selling Price</th>
-          </tr>
-        </thead>
+      <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Buying</th>
+          <th>Selling</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <tr className="text-center">
-            <td className="border border-gray-400 px-4 py-2">1</td>
-            <td className="border border-gray-400 px-4 py-2">Milk Cream</td>
-            <td className="border border-gray-400 px-4 py-2">360</td>
-            <td className="border border-gray-400 px-4 py-2">540</td>
+      <tbody>
+        {products.map((product) => (
+          <tr key={product.id}>
+            <td>{product.id}</td>
+            <td>{product.name}</td>
+            <td>{product.buying_price}</td>
+            <td>{product.selling_price}</td>
           </tr>
-        </tbody>
-      </table>
+        ))}
+      </tbody>
+    </table>
     </div>
   )
 }

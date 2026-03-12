@@ -1,3 +1,107 @@
+REACT JS
+-> Is a free and open source JS library used for building interactive UIs specifically for SPAs
+-> SPA - Single Page Application
+-> It is maintained by Meta
+
+       Background
+*SPA - an application that loads a single html page and dynamically updates the content as a user interacts with it -> No reloading of the whole page
+*MPA - Multiple Page Application - each page is a separate HTML file and it reloads the whole page -> full page reloads -> browser requests a new page from the server  -. typically slower than an SPA
+
+client(ui) -> Server (api) -> db(storage)
+
+             CORE CONCEPTS
+1.Component-based architecture - allows you to break down UI into small reusable pieces called components
+ -> Each component has:
+    *Logic - JS - manages content 
+    *UI - appearance
+2.JSX
+    -> A syntax extension for JS used in React to describe what the the UI     should look like -> allows you to write HTML like code inside JS
+3.Virtual DOM
+
+               Understanding the DOM
+DOM  -> Document Object Model - is tree like representation of a webpage. It represents all the elements in a webpage
+-> Each element ,attrribute and text becomes a node in the DOM tree
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id='hello'>Hello World</p>
+    </div>
+    
+</body>
+</html>
+
+document
+            html 
+                   head
+                   body
+                          div
+                              p
+                                - Hello World
+                              p
+                                - this is react
+
+1.Create HTML page with elements and attributes
+2.Open your page in the browser
+3.Browser parses your HTML and CSS and creates a DOM tree
+4.JS can then: access elements , change content, modify css,
+ add or remove elements dynamically => making pages interactive
+
+       Creating the DOM
+1.Browser receives HTML - read HTML line by line
+2.Parsing HTML - browser parses HTML,each HTML tag is identified,
+  text and attributes also identified, browser creates a node from each element ---> the collection of nodes form a tree like structure called DOM
+3.Browser constructs the DOM tree  - JS can access and update the DOM
+using various methods like document.getElementByID etc -> creates a dynamic page
+
+
+Virtual DOM
+- A light weight copy of a real DOM  which exists in memory
+- A draft version of your webpage
+
+Process
+1.Initial Render 
+-> React builds a virtual DOM tree from your React code(jsx)
+-> It then creates the real DOM from your virtual DOM
+2.Data changes 
+ -> React creates a new virtual DOM with updated data
+3.Reconciliation
+ -> React compares new virtual DOM with the previous virtual DOM
+-> React only identifies the parts that changed
+4.Update the real DOM
+-> React updates only the parts that changed
+
+==> Minimize operations and keeps the UI fast
+
+Scaffolding A React project using npm
+install node
+in your terminal run: npm create vite@latest project_name
+run your app: npm run dev
+
+Scaffolded project Structure
+1.node modules - where installed packages (React) live
+2.public folder - contains static files
+      *index.html - single HTML page React injects content into
+       - images , favicons,icons,txt files,videos
+3.src - contains all your React code
+      App.jsx - starting point for your UI
+      main.jsx - entry point - renders App.jsx to the DOM
+      index.css /App.css - global css files
+      assets - images ,icons & other static files for your components
+
+4.package.json - list project dependencies (libraries)
+5.package-lock.json - locks the exact version of your dependencies
+6. .gitignore - lists files to be ignored by Git
+7.vite.config.js - configures how vite builds and serves your React project
+8.eslint.config.js - configures ESlint (a tool that checks your code for errors)
+
+
 Functions - reusable blocks of code used to perform specific tasks
 
 syntax
@@ -129,3 +233,4 @@ Dependency array - determines how many times a sideeffect happens
 2.when empty - no dependencies
              - effect runs only once , when component first mounts
 3.passing dependencies - [productData] -> run every time productData changes
+

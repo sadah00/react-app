@@ -26,8 +26,8 @@ const Navbar = () => {
               Sales
             </Link>
 
-            <Link  to="/purchases" className="hover:text-purple-200">
-              Purchases
+            <Link  to="/dashboard" className="hover:text-purple-200">
+              Dashboard
             </Link>
 
             <Link  to="/stocks" className="hover:text-purple-200">

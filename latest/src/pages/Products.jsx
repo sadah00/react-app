@@ -22,6 +22,7 @@ const Products = () => {
     <div>
     
       <div>
+        
         <ProductsTable products={products} />
           
       </div>

@@ -1,18 +1,16 @@
-import React from 'react'
-import SalesHero from '../components/SalesHero'
-import SalesTable from '../components/SalesTable'
+import React from "react";
+import { useSales } from "../hooks/useGetSales";
+import SalesTable from "../components/SalesTable";
 
-const Sales = () => {
-  return (
-    <div>
-      <div>
-        <SalesHero/>
-      </div>
-      <div>
-        <SalesTable/>
-      </div>
-    </div>
-  )
-}
+const SalesPage = () => {
+  const { sales, loading, error } = useSales();
 
-export default Sales
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching sales.</p>;
+
+  // Here we ensure sales is passed as a prop
+  return <SalesTable sales={sales} />;
+};
+
+export default SalesPage;
+

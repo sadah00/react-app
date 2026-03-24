@@ -1,33 +1,33 @@
-import React, { useEffect,useState } from 'react'
-import axios from 'axios'
-import ProductsHero from '../components/ProductsHero'
-import ProductsTable from '../components/ProductsTable'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import ProductsHero from "../components/ProductsHero";
+import ProductsTable from "../components/ProductsTable";
 import useGetProducts from "../hooks/useGetProducts";
+import { useCreateProducts } from "../hooks/useCreateProducts";
+import ProductsForm from "../components/ProductsForm";
 
 const Products = () => {
-  const[productData,setProductData] = useState()
-  const { products} = useGetProducts();
+ 
+  const { products } = useGetProducts();
+  const productHook = useCreateProducts();
 
-  useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/products')
-    .then(response => {
-       console.log(response.data)
-       setProductData(response.data)
-    })
-    
-  },[])
-
-
+  
   return (
     <div>
-    
       <div>
-        
+        <ProductsHero />
+      </div>
+      <div>
+        <ProductsForm 
+        {...productHook}
+
+        />
+      </div>
+      <div>
         <ProductsTable products={products} />
-          
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

@@ -25,7 +25,9 @@ export const useCreateProducts = () => {
         e.preventDefault()
 
         try {
+              console.log(productData);
             await createProductService(productData);
+            console.log(productData);
             setProductData({
                 name: '',
                 buying_price: '',
